@@ -13,6 +13,11 @@
 		740CC5081CBADD8F00E74812 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 740CC5071CBADD8F00E74812 /* GameScene.sks */; };
 		740CC50A1CBADD8F00E74812 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 740CC5091CBADD8F00E74812 /* Assets.xcassets */; };
 		740CC50D1CBADD8F00E74812 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 740CC50B1CBADD8F00E74812 /* MainMenu.xib */; };
+		740CC5171CBAF27100E74812 /* bigThud.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 740CC5151CBAF27100E74812 /* bigThud.mp3 */; };
+		740CC5181CBAF27100E74812 /* wind.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 740CC5161CBAF27100E74812 /* wind.mp3 */; };
+		740CC51D1CBAF49B00E74812 /* DesertSand.sks in Resources */ = {isa = PBXBuildFile; fileRef = 740CC51A1CBAF49B00E74812 /* DesertSand.sks */; };
+		740CC51E1CBAF49B00E74812 /* DesertSmoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = 740CC51B1CBAF49B00E74812 /* DesertSmoke.sks */; };
+		740CC51F1CBAF49B00E74812 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 740CC51C1CBAF49B00E74812 /* spark.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		740CC5091CBADD8F00E74812 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		740CC50C1CBADD8F00E74812 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		740CC50E1CBADD8F00E74812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		740CC5151CBAF27100E74812 /* bigThud.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bigThud.mp3; sourceTree = "<group>"; };
+		740CC5161CBAF27100E74812 /* wind.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wind.mp3; sourceTree = "<group>"; };
+		740CC51A1CBAF49B00E74812 /* DesertSand.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DesertSand.sks; sourceTree = "<group>"; };
+		740CC51B1CBAF49B00E74812 /* DesertSmoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DesertSmoke.sks; sourceTree = "<group>"; };
+		740CC51C1CBAF49B00E74812 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +68,8 @@
 		740CC4FD1CBADD8E00E74812 /* SpriteDemoMac */ = {
 			isa = PBXGroup;
 			children = (
+				740CC5191CBAF49B00E74812 /* Scenes */,
+				740CC5141CBAF27100E74812 /* Sounds */,
 				740CC4FE1CBADD8E00E74812 /* AppDelegate.h */,
 				740CC4FF1CBADD8E00E74812 /* AppDelegate.m */,
 				740CC5041CBADD8E00E74812 /* GameScene.h */,
@@ -77,6 +89,25 @@
 				740CC5021CBADD8E00E74812 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		740CC5141CBAF27100E74812 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				740CC5151CBAF27100E74812 /* bigThud.mp3 */,
+				740CC5161CBAF27100E74812 /* wind.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		740CC5191CBAF49B00E74812 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				740CC51A1CBAF49B00E74812 /* DesertSand.sks */,
+				740CC51B1CBAF49B00E74812 /* DesertSmoke.sks */,
+				740CC51C1CBAF49B00E74812 /* spark.png */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -106,7 +137,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0730;
-				ORGANIZATIONNAME = "Ajay Thaur";
+				ORGANIZATIONNAME = "Ajay Thakur";
 				TargetAttributes = {
 					740CC4FA1CBADD8E00E74812 = {
 						CreatedOnToolsVersion = 7.3;
@@ -136,8 +167,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				740CC5171CBAF27100E74812 /* bigThud.mp3 in Resources */,
+				740CC5181CBAF27100E74812 /* wind.mp3 in Resources */,
 				740CC50A1CBADD8F00E74812 /* Assets.xcassets in Resources */,
 				740CC5081CBADD8F00E74812 /* GameScene.sks in Resources */,
+				740CC51E1CBAF49B00E74812 /* DesertSmoke.sks in Resources */,
+				740CC51F1CBAF49B00E74812 /* spark.png in Resources */,
+				740CC51D1CBAF49B00E74812 /* DesertSand.sks in Resources */,
 				740CC50D1CBADD8F00E74812 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,6 +329,7 @@
 				740CC5131CBADD8F00E74812 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

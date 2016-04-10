@@ -3,7 +3,7 @@
 //  SpriteDemoMac
 //
 //  Created by Ajay Thakur on 4/10/16.
-//  Copyright (c) 2016 Ajay Thaur. All rights reserved.
+//  Copyright (c) 2016 Ajay Thakur. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -17,7 +17,7 @@
     GameScene *scene = [GameScene nodeWithFileNamed:@"GameScene"];
 
     /* Set the scale mode to scale to fit the window */
-    scene.scaleMode = SKSceneScaleModeAspectFit;
+    scene.scaleMode = SKSceneScaleModeAspectFill;
 
     [self.skView presentScene:scene];
 
