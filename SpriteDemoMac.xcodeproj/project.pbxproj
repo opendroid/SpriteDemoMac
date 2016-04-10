@@ -1,0 +1,300 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		740CC5001CBADD8E00E74812 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 740CC4FF1CBADD8E00E74812 /* AppDelegate.m */; };
+		740CC5031CBADD8E00E74812 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 740CC5021CBADD8E00E74812 /* main.m */; };
+		740CC5061CBADD8F00E74812 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 740CC5051CBADD8F00E74812 /* GameScene.m */; };
+		740CC5081CBADD8F00E74812 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 740CC5071CBADD8F00E74812 /* GameScene.sks */; };
+		740CC50A1CBADD8F00E74812 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 740CC5091CBADD8F00E74812 /* Assets.xcassets */; };
+		740CC50D1CBADD8F00E74812 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 740CC50B1CBADD8F00E74812 /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		740CC4FB1CBADD8E00E74812 /* SpriteDemoMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpriteDemoMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		740CC4FE1CBADD8E00E74812 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		740CC4FF1CBADD8E00E74812 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		740CC5021CBADD8E00E74812 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		740CC5041CBADD8E00E74812 /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		740CC5051CBADD8F00E74812 /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		740CC5071CBADD8F00E74812 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		740CC5091CBADD8F00E74812 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		740CC50C1CBADD8F00E74812 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		740CC50E1CBADD8F00E74812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		740CC4F81CBADD8E00E74812 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		740CC4F21CBADD8E00E74812 = {
+			isa = PBXGroup;
+			children = (
+				740CC4FD1CBADD8E00E74812 /* SpriteDemoMac */,
+				740CC4FC1CBADD8E00E74812 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		740CC4FC1CBADD8E00E74812 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				740CC4FB1CBADD8E00E74812 /* SpriteDemoMac.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		740CC4FD1CBADD8E00E74812 /* SpriteDemoMac */ = {
+			isa = PBXGroup;
+			children = (
+				740CC4FE1CBADD8E00E74812 /* AppDelegate.h */,
+				740CC4FF1CBADD8E00E74812 /* AppDelegate.m */,
+				740CC5041CBADD8E00E74812 /* GameScene.h */,
+				740CC5051CBADD8F00E74812 /* GameScene.m */,
+				740CC5071CBADD8F00E74812 /* GameScene.sks */,
+				740CC5091CBADD8F00E74812 /* Assets.xcassets */,
+				740CC50B1CBADD8F00E74812 /* MainMenu.xib */,
+				740CC50E1CBADD8F00E74812 /* Info.plist */,
+				740CC5011CBADD8E00E74812 /* Supporting Files */,
+			);
+			path = SpriteDemoMac;
+			sourceTree = "<group>";
+		};
+		740CC5011CBADD8E00E74812 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				740CC5021CBADD8E00E74812 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		740CC4FA1CBADD8E00E74812 /* SpriteDemoMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 740CC5111CBADD8F00E74812 /* Build configuration list for PBXNativeTarget "SpriteDemoMac" */;
+			buildPhases = (
+				740CC4F71CBADD8E00E74812 /* Sources */,
+				740CC4F81CBADD8E00E74812 /* Frameworks */,
+				740CC4F91CBADD8E00E74812 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SpriteDemoMac;
+			productName = SpriteDemoMac;
+			productReference = 740CC4FB1CBADD8E00E74812 /* SpriteDemoMac.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		740CC4F31CBADD8E00E74812 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Ajay Thaur";
+				TargetAttributes = {
+					740CC4FA1CBADD8E00E74812 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = 740CC4F61CBADD8E00E74812 /* Build configuration list for PBXProject "SpriteDemoMac" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 740CC4F21CBADD8E00E74812;
+			productRefGroup = 740CC4FC1CBADD8E00E74812 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				740CC4FA1CBADD8E00E74812 /* SpriteDemoMac */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		740CC4F91CBADD8E00E74812 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				740CC50A1CBADD8F00E74812 /* Assets.xcassets in Resources */,
+				740CC5081CBADD8F00E74812 /* GameScene.sks in Resources */,
+				740CC50D1CBADD8F00E74812 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		740CC4F71CBADD8E00E74812 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				740CC5031CBADD8E00E74812 /* main.m in Sources */,
+				740CC5061CBADD8F00E74812 /* GameScene.m in Sources */,
+				740CC5001CBADD8E00E74812 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		740CC50B1CBADD8F00E74812 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				740CC50C1CBADD8F00E74812 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		740CC50F1CBADD8F00E74812 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		740CC5101CBADD8F00E74812 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		740CC5121CBADD8F00E74812 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SpriteDemoMac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.psv.apps.ios.SpriteDemoMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		740CC5131CBADD8F00E74812 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SpriteDemoMac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.psv.apps.ios.SpriteDemoMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		740CC4F61CBADD8E00E74812 /* Build configuration list for PBXProject "SpriteDemoMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				740CC50F1CBADD8F00E74812 /* Debug */,
+				740CC5101CBADD8F00E74812 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		740CC5111CBADD8F00E74812 /* Build configuration list for PBXNativeTarget "SpriteDemoMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				740CC5121CBADD8F00E74812 /* Debug */,
+				740CC5131CBADD8F00E74812 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 740CC4F31CBADD8E00E74812 /* Project object */;
+}
