@@ -14,6 +14,8 @@
 // Original Sound assets URLs:
 //  1. Swish originial sound: https://www.freesound.org/people/byMax/sounds/327990/
 //  2. Thud original sound: https://www.freesound.org/people/Reitanna/sounds/332668/
+//  3. Old plane sound: https://www.freesound.org/people/fresco/sounds/40810/
+//  4. Spaceship sound: https://www.freesound.org/people/nick121087/sounds/234316/
 //
 // Particles are created in the Xcode Partcile editor.
 
@@ -29,7 +31,7 @@
 -(void)didMoveToView:(SKView *)view {
     /* Setup your scene here - GameScene.sks sets the size to 2880x1800 full screen mode. */
 
-    NSLog(@"Size:(%f,%f", self.frame.size.width, self.frame.size.height);
+    // Create a boundary physics body. All Physics objects stay in.
     self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
     self.scaleMode = SKSceneScaleModeAspectFit;
     self.physicsWorld.contactDelegate = self; // Delegate for contacts
@@ -46,6 +48,8 @@
     [self addChild:backgroundImageNode];
     
     // Sprite Node 3: Lower area - Desert
+    //  This adds a affect so the falling tire bounces of little bit up from bottom of
+    //  the screem. The image used to create it is exactl bitmap of under-layed background
     SKSpriteNode *lowerStripNode = [SKSpriteNode spriteNodeWithImageNamed:@"desertBottom2880x300"];
     lowerStripNode.name = @"LowerStrip";
     lowerStripNode.position = CGPointMake(self.size.width/2, lowerStripNode.size.height/2);
@@ -60,6 +64,7 @@
     [self addChild:lowerStripNode];
     
     // Sprite Node 4: A falling tire from sky
+    // The moving body in the scene. A tire falls from sky. 
     self.bouncingTireSprite = [SKSpriteNode spriteNodeWithImageNamed:@"tire256x256"];
     self.bouncingTireSprite.name = @"Tire";
     self.bouncingTireSprite.position = CGPointMake(0, self.frame.size.height * 0.75);
@@ -82,6 +87,17 @@
     self.bouncingTireSprite.physicsBody.contactTestBitMask = 0x03; // Notify on colision with Boundary and Lower surface
     [self addChild:self.bouncingTireSprite];
     
+    //Sprite Node 5: Reuse 'spaceship' asset fly in elliptical orbit.
+    SKSpriteNode *spaceship = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
+    spaceship.zPosition = 0.2;
+    spaceship.size = CGSizeMake(197, 123);
+    CGPathRef ellipsePath = CGPathCreateWithEllipseInRect(CGRectMake(0, 1500, 2700, 300), NULL);
+    SKAction *flyingTrack = [SKAction followPath:ellipsePath asOffset:NO orientToPath:YES duration:10.0];
+    SKAction *playPlaneSound = [SKAction playSoundFileNamed:@"spaceship.wav" waitForCompletion:NO]; // Action 1: play sound
+    SKAction *planeActionSequence = [SKAction sequence:@[flyingTrack,playPlaneSound]];
+    SKAction *planeActionSequenceRunForever = [SKAction repeatActionForever:planeActionSequence];
+    [self addChild:spaceship];
+    [spaceship runAction:planeActionSequenceRunForever];
 }
 
 -(void)mouseDown:(NSEvent *)theEvent {

@@ -18,6 +18,8 @@
 		740CC51D1CBAF49B00E74812 /* DesertSand.sks in Resources */ = {isa = PBXBuildFile; fileRef = 740CC51A1CBAF49B00E74812 /* DesertSand.sks */; };
 		740CC51E1CBAF49B00E74812 /* DesertSmoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = 740CC51B1CBAF49B00E74812 /* DesertSmoke.sks */; };
 		740CC51F1CBAF49B00E74812 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 740CC51C1CBAF49B00E74812 /* spark.png */; };
+		740CC5211CBAFF0400E74812 /* oldPlaneSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 740CC5201CBAFF0400E74812 /* oldPlaneSound.wav */; };
+		740CC5231CBB02F500E74812 /* spaceship.wav in Resources */ = {isa = PBXBuildFile; fileRef = 740CC5221CBB02F500E74812 /* spaceship.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		740CC51A1CBAF49B00E74812 /* DesertSand.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DesertSand.sks; sourceTree = "<group>"; };
 		740CC51B1CBAF49B00E74812 /* DesertSmoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DesertSmoke.sks; sourceTree = "<group>"; };
 		740CC51C1CBAF49B00E74812 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		740CC5201CBAFF0400E74812 /* oldPlaneSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = oldPlaneSound.wav; sourceTree = "<group>"; };
+		740CC5221CBB02F500E74812 /* spaceship.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = spaceship.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,8 @@
 		740CC5141CBAF27100E74812 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				740CC5221CBB02F500E74812 /* spaceship.wav */,
+				740CC5201CBAFF0400E74812 /* oldPlaneSound.wav */,
 				740CC5151CBAF27100E74812 /* bigThud.mp3 */,
 				740CC5161CBAF27100E74812 /* wind.mp3 */,
 			);
@@ -170,9 +176,11 @@
 				740CC5171CBAF27100E74812 /* bigThud.mp3 in Resources */,
 				740CC5181CBAF27100E74812 /* wind.mp3 in Resources */,
 				740CC50A1CBADD8F00E74812 /* Assets.xcassets in Resources */,
+				740CC5231CBB02F500E74812 /* spaceship.wav in Resources */,
 				740CC5081CBADD8F00E74812 /* GameScene.sks in Resources */,
 				740CC51E1CBAF49B00E74812 /* DesertSmoke.sks in Resources */,
 				740CC51F1CBAF49B00E74812 /* spark.png in Resources */,
+				740CC5211CBAFF0400E74812 /* oldPlaneSound.wav in Resources */,
 				740CC51D1CBAF49B00E74812 /* DesertSand.sks in Resources */,
 				740CC50D1CBADD8F00E74812 /* MainMenu.xib in Resources */,
 			);
