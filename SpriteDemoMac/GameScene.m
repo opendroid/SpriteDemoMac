@@ -88,16 +88,7 @@
     [self addChild:self.bouncingTireSprite];
     
     //Sprite Node 5: Reuse 'spaceship' asset fly in elliptical orbit.
-    SKSpriteNode *spaceship = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
-    spaceship.zPosition = 0.2;
-    spaceship.size = CGSizeMake(197, 123);
-    CGPathRef ellipsePath = CGPathCreateWithEllipseInRect(CGRectMake(0, 1500, 2700, 300), NULL);
-    SKAction *flyingTrack = [SKAction followPath:ellipsePath asOffset:NO orientToPath:YES duration:10.0];
-    SKAction *playPlaneSound = [SKAction playSoundFileNamed:@"spaceship.wav" waitForCompletion:NO]; // Action 1: play sound
-    SKAction *planeActionSequence = [SKAction sequence:@[flyingTrack,playPlaneSound]];
-    SKAction *planeActionSequenceRunForever = [SKAction repeatActionForever:planeActionSequence];
-    [self addChild:spaceship];
-    [spaceship runAction:planeActionSequenceRunForever];
+    [self addSpaceshipSprite];
 }
 
 -(void)mouseDown:(NSEvent *)theEvent {
@@ -115,6 +106,33 @@
 }
 
 #pragma mark -- Helper funcitons to create Sprites.
+
+// Add spaceship sprite with blue fire particle emitter.
+- (void) addSpaceshipSprite {
+    SKSpriteNode *spaceship = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
+    spaceship.zPosition = 0.2;
+    spaceship.size = CGSizeMake(197, 123);
+    [self addChild:spaceship];
+    // Spaceship Action 1: Move around in an Ellipse
+    CGPathRef ellipsePath = CGPathCreateWithEllipseInRect(CGRectMake(0, 1500, 2700, 300), NULL);
+    SKAction *flyingTrack = [SKAction followPath:ellipsePath asOffset:NO orientToPath:YES duration:10.0];
+    // Spaceship Action 2: play sound
+    SKAction *playPlaneSound = [SKAction playSoundFileNamed:@"spaceship.wav" waitForCompletion:NO];
+    SKAction *spaceshipActionSequence = [SKAction sequence:@[flyingTrack,playPlaneSound]];
+    // Run composite action sequence for ever
+    SKAction *ssActionSequenceRunForever = [SKAction repeatActionForever:spaceshipActionSequence];
+    [spaceship runAction:ssActionSequenceRunForever];
+    
+    // Add blue fire particles
+    NSString *sandsParticlesPath = [[NSBundle mainBundle] pathForResource:@"FireParticle" ofType:@"sks"];
+    SKEmitterNode *emitterNode = [NSKeyedUnarchiver unarchiveObjectWithFile:sandsParticlesPath];
+    emitterNode.zPosition = 1.0;
+    //emitterNode.targetNode = self;
+    emitterNode.position = CGPointMake(0,-60);
+    emitterNode.name = @"SandParticles";
+    [spaceship addChild:emitterNode];
+}
+
 
 - (SKEmitterNode* ) createDesertSandParticles: (CGPoint) position {
     NSString *sandsParticlesPath = [[NSBundle mainBundle] pathForResource:@"DesertSand" ofType:@"sks"];
