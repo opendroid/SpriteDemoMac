@@ -177,12 +177,9 @@
     SKAction *moveDown = [SKAction moveToY:800 duration:3.0f];
     SKAction *moveCombo = [SKAction sequence:@[moveUp, moveDown]];
     SKAction *moveForever = [SKAction repeatActionForever:moveCombo];
-    
+    SKAction *birdActionGroup = [SKAction group:@[flapForever,pulseOrangeForever,moveForever]];
     // Running these in parallel.
-    [flappingBird runAction:flapForever withKey:@"BirdFlapping"];
-    [flappingBird runAction:pulseOrangeForever withKey:@"BirdPulsingOrange"];
-    [flappingBird runAction:moveForever withKey:@"BirdHovering"];
-
+    [flappingBird runAction:birdActionGroup withKey:@"BirdAnimation"];
 }
 
 - (void) addSnakeAtlas {
