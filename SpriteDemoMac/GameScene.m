@@ -9,6 +9,9 @@
 // Original image assets URLs:
 //  1. Desert background: http://science-all.com/image.php?pic=/images/desert/desert-01.jpg
 //  2. Tire: http://www.firestonetire.com/content/dam/fst/tire-images/affinity-touring/quick-look.png
+//  3. Flapping bird: http://heathersanimations.com/flying/anibird9.gif
+//  4. Snake: http://heathersanimations.com/snakes/s16.gif
+//
 //  Used GIMP to crop images to 2880x1800 size.
 //
 // Original Sound assets URLs:
@@ -87,8 +90,10 @@
     self.bouncingTireSprite.physicsBody.contactTestBitMask = 0x03; // Notify on colision with Boundary and Lower surface
     [self addChild:self.bouncingTireSprite];
     
-    //Sprite Node 5: Reuse 'spaceship' asset fly in elliptical orbit.
+    //Sprite Node 5,6,7: Reuse 'spaceship' asset + Add a Bird + Add a sanke [animated]
     [self addSpaceshipSprite];
+    [self addBirdAtlas];
+    [self addSnakeAtlas];
 }
 
 -(void)mouseDown:(NSEvent *)theEvent {
@@ -113,9 +118,11 @@
     spaceship.zPosition = 0.2;
     spaceship.size = CGSizeMake(197, 123);
     [self addChild:spaceship];
+    
     // Spaceship Action 1: Move around in an Ellipse
     CGPathRef ellipsePath = CGPathCreateWithEllipseInRect(CGRectMake(0, 1500, 2700, 300), NULL);
     SKAction *flyingTrack = [SKAction followPath:ellipsePath asOffset:NO orientToPath:YES duration:10.0];
+    
     // Spaceship Action 2: play sound
     SKAction *playPlaneSound = [SKAction playSoundFileNamed:@"spaceship.wav" waitForCompletion:NO];
     SKAction *spaceshipActionSequence = [SKAction sequence:@[flyingTrack,playPlaneSound]];
@@ -129,10 +136,80 @@
     emitterNode.zPosition = 1.0;
     //emitterNode.targetNode = self;
     emitterNode.position = CGPointMake(0,-60);
-    emitterNode.name = @"SandParticles";
+    emitterNode.name = @"SSExhaustParticles";
     [spaceship addChild:emitterNode];
 }
 
+
+- (void) addBirdAtlas {
+    // Grab the images im a array from the Atlas.
+    NSMutableArray *birdFrames = [NSMutableArray array];
+    SKTextureAtlas *birdAtlas = [SKTextureAtlas atlasNamed:@"bird"];
+    NSInteger countOfFrames = birdAtlas.textureNames.count;
+    for (NSInteger i=1; i <= countOfFrames; i++) {
+        NSString *texture = [NSString stringWithFormat:@"bird%ld", i];
+        SKTexture *aFlap = [birdAtlas textureNamed:texture];
+        [birdFrames addObject:aFlap];
+    }
+
+    // Create the Bird Sprite Node
+    SKSpriteNode *flappingBird = [SKSpriteNode spriteNodeWithTexture:birdFrames[0]];
+    flappingBird.position = CGPointMake(2600, 800);
+    flappingBird.zPosition = 0.3;
+    flappingBird.name = @"FlappingBird";
+    [self addChild:flappingBird];
+    
+    // Add flapping from the atlas to bird node.
+    SKAction *flappingImages = [SKAction animateWithTextures:birdFrames timePerFrame:0.1f];
+    SKAction *flapForever = [SKAction repeatActionForever:flappingImages];
+    
+    // Add color changing animations to it.
+    // Apple documentation: https://developer.apple.com/library/ios/documentation/GraphicsAnimation/Conceptual/SpriteKit_PG/Sprites/Sprites.html
+    //
+    SKAction *pulseOrange = [SKAction sequence:@[
+                                              [SKAction colorizeWithColor:[SKColor orangeColor] colorBlendFactor:1.0 duration:3.0],
+                                              [SKAction waitForDuration:1.0],
+                                              [SKAction colorizeWithColorBlendFactor:0.0 duration:3.0]]];
+    SKAction *pulseOrangeForever = [SKAction repeatActionForever:pulseOrange];
+    
+    // Add up and down motion.
+    SKAction *moveUp = [SKAction moveToY:1300 duration:6.0f];
+    SKAction *moveDown = [SKAction moveToY:800 duration:3.0f];
+    SKAction *moveCombo = [SKAction sequence:@[moveUp, moveDown]];
+    SKAction *moveForever = [SKAction repeatActionForever:moveCombo];
+    
+    // Running these in parallel.
+    [flappingBird runAction:flapForever withKey:@"BirdFlapping"];
+    [flappingBird runAction:pulseOrangeForever withKey:@"BirdPulsingOrange"];
+    [flappingBird runAction:moveForever withKey:@"BirdHovering"];
+
+}
+
+- (void) addSnakeAtlas {
+    // Grab the images im a array from the Atlas.
+    NSMutableArray *snakeFrames = [NSMutableArray array];
+    SKTextureAtlas *snakeAtlas = [SKTextureAtlas atlasNamed:@"snake"];
+    NSInteger countOfFrames = snakeAtlas.textureNames.count;
+    for (NSInteger i=1; i <= countOfFrames; i++) {
+        NSString *texture = [NSString stringWithFormat:@"snake%ld", i];
+        SKTexture *aFlap = [snakeAtlas textureNamed:texture];
+        [snakeFrames addObject:aFlap];
+    }
+    
+    // Create the Bird Sprite Node
+    SKSpriteNode *snake = [SKSpriteNode spriteNodeWithTexture:snakeFrames[0]];
+    snake.position = CGPointMake(2600, 700);
+    snake.zPosition = 0.3;
+    snake.name = @"Snake";
+    [self addChild:snake];
+    
+    // Add flapping from the atlas to bird node.
+    SKAction *snakeAnime = [SKAction animateWithTextures:snakeFrames timePerFrame:0.4f];
+    SKAction *wait = [SKAction waitForDuration:5.0];
+    SKAction *moveSeq = [SKAction sequence:@[snakeAnime, wait]];
+    SKAction *moveForever = [SKAction repeatActionForever:moveSeq];
+    [snake runAction:moveForever withKey:@"snakeMoving"];
+}
 
 - (SKEmitterNode* ) createDesertSandParticles: (CGPoint) position {
     NSString *sandsParticlesPath = [[NSBundle mainBundle] pathForResource:@"DesertSand" ofType:@"sks"];
